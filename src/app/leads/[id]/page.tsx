@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import {
   Phone,
@@ -64,7 +64,7 @@ const activityTypeColors: Record<Activity['type'], string> = {
   PRODUCT_DEVELOPMENT: 'text-orange-600',
 };
 
-const activityIcons: Record<Activity['type'], JSX.Element> = {
+const activityIcons: Record<Activity['type'], React.ReactElement> = {
   CALL: <Phone className="w-4 h-4 text-blue-600 inline-block" />,
   WHATSAPP: <MessageCircle className="w-4 h-4 text-green-600 inline-block" />,
   EMAIL: <Mail className="w-4 h-4 text-yellow-600 inline-block" />,

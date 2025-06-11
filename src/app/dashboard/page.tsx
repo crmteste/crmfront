@@ -22,7 +22,7 @@ type Lead = {
   stage: string;
 };
 
-export default function DashboardPage(): JSX.Element {
+export default function DashboardPage(): React.ReactNode {
   const router = useRouter();
   const [leads, setLeads] = useState<Lead[]>([]);
   const [userName, setUserName] = useState<string | null>(null);
@@ -129,7 +129,7 @@ export default function DashboardPage(): JSX.Element {
                 <div className="p-5 space-y-4 min-h-[350px] flex-grow">
                   <Column
                     id={etapa}
-                    title={FUNIL_NOMES[etapa]} // Title prop might not be used if Column internal, but kept for consistency
+                    title={FUNIL_NOMES[etapa]}
                     leads={leads.filter((l) => l.stage === etapa)}
                   />
                 </div>
